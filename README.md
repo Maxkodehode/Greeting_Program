@@ -1,4 +1,4 @@
-<img width="1998" height="1006" alt="image" src=Greeting_Program_plan.png/>
+![greeting plan](image.png)
 
 /*
 1-Gather Input 
