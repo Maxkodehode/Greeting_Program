@@ -9,6 +9,6 @@ public class AfternoonRule : Contract
   
   public string GetGreeting(GreetingContext context)
 {
-  return $"Good Afternoon, {context.UserName}! Hope your day is going well!";   
+  return $"[navy]Good Afternoon, {context.UserName}! Hope your day is going well![/]";   
 }
 }

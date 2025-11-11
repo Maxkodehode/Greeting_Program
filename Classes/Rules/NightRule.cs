@@ -9,6 +9,6 @@ public class NightRule : Contract
 
   public string GetGreeting(GreetingContext context)
   {
-    return $"Burning the midnight oil i see, {context.UserName} have a nice night!";
+    return $"[blue]Burning the midnight oil i see, {context.UserName} have a nice night![/]";
   }
 }

@@ -4,5 +4,5 @@ public class FridayRule : Contract
     => context.Day == DayOfWeek.Friday && context.HourOfDay >= 15 && context.HourOfDay < 23;
 
   public string GetGreeting(GreetingContext context)
-    => $"It's friday! {context.UserName}! Enjoy your weekend!";
+    => $"[olive]It's Friday! {context.UserName}! Enjoy your weekend![/]";
 }

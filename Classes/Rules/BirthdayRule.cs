@@ -1,4 +1,5 @@
 using System;
+using Spectre.Console;
 
 
 public class BirthdayRule : Contract
@@ -9,5 +10,5 @@ public class BirthdayRule : Contract
     return birthDayMatch;
   }
   public string GetGreeting(GreetingContext context)
-  => $"🎈🥳🎂Happy Birthday! 🎉{context.UserName}!🎉 Wishing you a fantastic day!🍰🎁🎆";
+  => $"[yellow]🎈🥳🎂Happy Birthday! 🎉{context.UserName}!🎉 Wishing you a fantastic day!🍰🎁🎆[/]";
 }

@@ -6,5 +6,5 @@ public class MorningRule : Contract
     => context.HourOfDay >= 5 && context.HourOfDay < 12;
 
   public string GetGreeting(GreetingContext context)
-    => $"Good Morning, {context.UserName}! Have a great day!";  
+    => $"[aqua]Good Morning, {context.UserName}! Have a great day![/]";  
 }
