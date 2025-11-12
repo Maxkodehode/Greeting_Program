@@ -7,5 +7,5 @@ public class WeekendRule : Contract
     && context.Day == DayOfWeek.Saturday || context.Day == DayOfWeek.Sunday;
 
   public string GetGreeting(GreetingContext context)
-    => $"[maroon]Happy Weekend, {context.UserName}! Time to relax.[/]";
+    => $"[red]Happy Weekend, {context.UserName}! Time to relax.[/]";
 }

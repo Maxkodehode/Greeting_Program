@@ -11,6 +11,7 @@ public class Program
     {
       userName = "Guest";
     }
+
     // Prompt for birth month
     AnsiConsole.MarkupLine("[bold purple]Please Enter Your Birth Month (1-12):[/]");
     var birthMonth = Console.ReadLine();
@@ -19,6 +20,7 @@ public class Program
     {
       birthMonthInt = 1;
     }
+
     // Prompt for birth day
     AnsiConsole.MarkupLine("[bold purple]Please Enter Your Birth Day (1-31):[/]");
     var birthDay = Console.ReadLine();
@@ -27,7 +29,7 @@ public class Program
     {
       birthDayInt = 1;
     }
-
+// Get the current date and time
     DateTime now = DateTime.Now;
     // Create the greeting context with user data and current time
     var context = new GreetingContext(
@@ -40,6 +42,7 @@ public class Program
     BirthMonth: birthMonthInt,
     BirthDay: birthDayInt
   );
+
     // Define the greeting rules in order of priority
     var rules = new List<Contract>
   {
@@ -52,6 +55,7 @@ public class Program
       new NightRule(),
       new DefaultRule()// Is redundant as it will always match
 };
+
     // Initialize the WhichGreeting with the defined rules
     var whichGreeting = new WhichGreeting(rules);
     // Get the greeting based on the context
@@ -60,8 +64,7 @@ public class Program
     // Display the greeting
     AnsiConsole.MarkupLine("[teal]\n-------------------------[/]");
     AnsiConsole.MarkupLine($"[lime]Current Time: {now.ToShortTimeString()} ({now.DayOfWeek}), {now.Day} of {now.ToString("MMMM")}[/]");
-        AnsiConsole.MarkupLine("[teal]\n-------------------------[/]");
-
+    AnsiConsole.MarkupLine("[teal]\n-------------------------[/]");
     AnsiConsole.MarkupLine(greeting);
     AnsiConsole.MarkupLine("[teal]\n-------------------------[/]");
     while (true)
@@ -74,28 +77,28 @@ public class Program
       switch (choice)
       {
         case "BirthdayRule":
-          AnsiConsole.MarkupLine($"{new BirthdayRule().GetGreeting(context)}[/]");
+          AnsiConsole.MarkupLine($"{new BirthdayRule().GetGreeting(context)}");
           break;
         case "FridayRule":
-          AnsiConsole.MarkupLine($"[olive]{new FridayRule().GetGreeting(context)}[/]");
+          AnsiConsole.MarkupLine($"{new FridayRule().GetGreeting(context)}");
           break;
         case "WeekendRule":
-          AnsiConsole.MarkupLine($"[maroon]{new WeekendRule().GetGreeting(context)}[/]");
+          AnsiConsole.MarkupLine($"{new WeekendRule().GetGreeting(context)}");
           break;
         case "MorningRule":
-          AnsiConsole.MarkupLine($"[aqua]{new MorningRule().GetGreeting(context)}[/]");
+          AnsiConsole.MarkupLine($"{new MorningRule().GetGreeting(context)}");
           break;
         case "AfternoonRule":
-          AnsiConsole.MarkupLine($"[green]{new AfternoonRule().GetGreeting(context)}[/]");
+          AnsiConsole.MarkupLine($"{new AfternoonRule().GetGreeting(context)}");
           break;
         case "EveningRule":
-          AnsiConsole.MarkupLine($"[red]{new EveningRule().GetGreeting(context)}[/]");
+          AnsiConsole.MarkupLine($"{new EveningRule().GetGreeting(context)}");
           break;
         case "NightRule":
-          AnsiConsole.MarkupLine($"[blue]{new NightRule().GetGreeting(context)}[/]");
+          AnsiConsole.MarkupLine($"{new NightRule().GetGreeting(context)}");
           break;
         case "DefaultRule":
-          AnsiConsole.MarkupLine($"[white]{new DefaultRule().GetGreeting(context)}[/]");
+          AnsiConsole.MarkupLine($"{new DefaultRule().GetGreeting(context)}");
           break;
         case "Exit":
           return;
